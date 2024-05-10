@@ -5,7 +5,7 @@
     "plugins/*/src",
     "plugins/*/dev",
     "plugins/*/migrations"
-  ],
+, "plugins/global-search-backend/test-playground"  ],
   "compilerOptions": {
     "outDir": "dist-types",
     "rootDir": ".",

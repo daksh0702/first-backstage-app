@@ -28,6 +28,7 @@ import {
 import { DefaultTechDocsCollatorFactory } from '@backstage/plugin-search-backend-module-techdocs';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
+import { CollatorFactory } from '@backstage/plugin-global-search-backend';
 
 async function createSearchEngine(
   env: PluginEnvironment,
@@ -93,6 +94,16 @@ export default async function createPlugin(
       logger: env.logger,
     }),
   });
+
+  // Custom Collator
+  env.logger.info('CUSTOM COLLATOR START')
+  indexBuilder.addCollator({
+    schedule,
+    factory: CollatorFactory.fromConfig({
+      logger: env.logger
+    })
+  })
+  env.logger.info('CUSTOM COLLATOR END')
 
   // The scheduler controls when documents are gathered from collators and sent
   // to the search engine for indexing.

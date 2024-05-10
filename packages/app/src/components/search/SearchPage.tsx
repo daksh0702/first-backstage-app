@@ -124,7 +124,7 @@ const SearchPage = () => {
             </Grid>
           )}
           <Grid item xs>
-            <SearchPagination />
+            <SearchPagination /> 
             <SearchResult>
               <CatalogSearchResultListItem icon={<CatalogIcon />} />
               <TechDocsSearchResultListItem icon={<DocsIcon />} />

@@ -221,6 +221,7 @@ export const SearchResultComponent = (props: SearchResultProps) => {
 
         return (
           <SearchResultListItemExtensions {...rest} results={value.results}>
+            {console.log('obj',value?.results)}
             {children}
           </SearchResultListItemExtensions>
         );
